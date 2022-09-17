@@ -19,10 +19,13 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
+const { getTypeDiets } = require('./src/controllers/functions.js');
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
-  server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
-  });
-});
+conn.sync({ force: true })
+  .then(() => {
+    server.listen(3001, () => {
+      console.log('%s listening at 3001'); // eslint-disable-line no-console
+    });
+  })
+  .then(async () => await getTypeDiets());
