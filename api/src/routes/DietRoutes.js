@@ -1,5 +1,4 @@
 const { Router } = require('express');
-const { getTypeDiets } = require('../controllers/functions.js');
 const { Recipe, Diet } = require('../db.js');
 
 // Importar todos los routers;
@@ -8,11 +7,11 @@ const { Recipe, Diet } = require('../db.js');
 const router = Router();
 
 //Ruta que muestra los tipos de dietas que hay en la base de datos
-router.get('/', (req, res, next) => {
+router.get('/', async (req, res, next) => {
 
     return Diet.findAll()
         .then(data => {
-            res.send(data);
+            res.status(200).send(data);
         })
         .catch((error) => {
             next(error);
@@ -20,11 +19,12 @@ router.get('/', (req, res, next) => {
 
     // try {
     //     const diet = await Diet.findAll();
-    //      return diet;
-    //     res.status(201).send(probando);
+    //     res.status(200).send(diet);
+    //     //return diet;
     // } catch (error) {
     //     next(error);
     // }
-})
+});
+
 
 module.exports = router;
