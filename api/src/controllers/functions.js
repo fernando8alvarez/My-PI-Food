@@ -130,7 +130,7 @@ const getRecipeForIdDb = async (id) => {
 
 //FUNCION N°6: Filtrar una receta Dependiendo de la id recibo (si va a ser de la api o de la BD)
 const getAllInfoForId = async (id) => {
-    //resultado = await getRecipeForIdApi(id);
+    
     return id.length > 15 ? await getRecipeForIdDb(id) : await getRecipeForIdApi(id);
 
 }
