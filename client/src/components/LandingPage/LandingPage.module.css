@@ -1,0 +1,51 @@
+@import url(//db.onlinewebfonts.com/c/d101df33d2d490a46ec3f7d01f59cad8?family=Romany);
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,800;1,800&display=swap');
+
+
+.container {
+    background-image: url('../image/Fondo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 45em;
+}
+
+.image {
+    border-radius: 30px;
+    height: 200px;
+    box-shadow: 0 5px 10px black;
+    width: 200px;
+}
+
+.titulo {
+    font-family: Nunito, sans-serif;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px black;
+    cursor: pointer;
+}
+
+.btn {
+    box-shadow: 0 5px 10px black;
+    width: 200px;
+    border-radius: 8px;
+    border-color: #4c2b0d;
+    background: #5e3915;
+    color: white;
+    font-size: larger;
+}
+
+.btn:hover {
+    background: rgba(0, 0, 0, 0.538);
+    border-color: rgba(0, 0, 0, 0.538);
+}
+
+.centro {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: flex-end;
+    padding-right: 250px;
+    flex-direction: column;
+    gap: 25px;
+}
+
