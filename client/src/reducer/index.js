@@ -8,13 +8,17 @@ import {
     ORDER_RECIPES_HEALTH_SCORE,
     GET_RECIPES_NAME,
     POST_RECIPES,
-    GET_DIETS
+    GET_DIETS,
+    GET_DETAILS,
+    LOADING
 } from "../actions/index.js";
 
 const initialState = {
     recipes: [],
     allrecipes: [],
-    diets: []
+    diets: [],
+    detail: [{}],
+    loading: false
 }
 
 function rootReducer(state = initialState, actions) {
@@ -24,8 +28,9 @@ function rootReducer(state = initialState, actions) {
         case GET_ALL_RECIPES:
             return {
                 ...state,
-                recipes: actions.payload,
-                allrecipes: actions.payload
+                recipes: actions.payload.data,
+                allrecipes: actions.payload.data,
+                loading: actions.payload.loading
             }
         case FILTER_BY_TYPES_DIET:
             const filterPerDiet = actions.payload === "All" ? allRecipes : allRecipes.filter((el) => el.diets.includes(actions.payload) && el)
@@ -76,17 +81,29 @@ function rootReducer(state = initialState, actions) {
         case GET_RECIPES_NAME:
             return {
                 ...state,
-                recipes: actions.payload
+                recipes: actions.payload.data,
+                loading: actions.payload.loading
             }
         case POST_RECIPES:
             return {
                 ...state
             }
         case GET_DIETS:
-            return{
+            return {
                 ...state,
                 diets: actions.payload
             }
+        case GET_DETAILS:
+            return {
+                ...state,
+                detail: [actions.payload]
+            }
+        case LOADING:
+            return {
+                ...state,
+                loading: actions.payload
+            }
+
         default: return state
     }
 }

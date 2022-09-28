@@ -8,13 +8,15 @@
     background-size: cover;
     background-attachment: fixed;
     height: 45em;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .image {
     border-radius: 30px;
-    height: 200px;
+    height: 300px;
     box-shadow: 0 5px 10px black;
-    width: 200px;
+    width: 300px;
 }
 
 .titulo {
@@ -43,9 +45,8 @@
     display: flex;
     justify-content: center;
     height: 100%;
-    align-items: flex-end;
+    align-items: center;
     padding-right: 250px;
     flex-direction: column;
     gap: 25px;
 }
-

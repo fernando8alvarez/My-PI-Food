@@ -16,12 +16,11 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     summary: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     image: {
-      type: DataTypes.STRING,
-      defaultValue: 'https://www.mercurionic.com/wp-content/uploads/2017/04/image_large.png'
+      type: DataTypes.STRING(500),
     },
     healthScore: {
       type: DataTypes.INTEGER,

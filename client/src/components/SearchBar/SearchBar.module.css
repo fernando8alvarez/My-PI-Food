@@ -13,8 +13,27 @@
     cursor: pointer;
     text-shadow: 2px 2px 4px black;
 }
-
 .btn:hover {
+    background: rgba(0, 0, 0, 0.538);
+    border-color: rgba(0, 0, 0, 0.538);
+}
+
+.btn3 {
+    width: 90px;
+    height: 48px;
+    border-radius: 8px;
+    border-color: #4c2b0d;
+    background: #5e3915;
+    color: white;
+    font-family: Nunito, sans-serif;
+    font-size: larger;
+    box-shadow: 0 5px 10px black;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px black;
+}
+
+
+.btn3:hover {
     background: rgba(0, 0, 0, 0.538);
     border-color: rgba(0, 0, 0, 0.538);
 }
@@ -36,4 +55,24 @@
 .container {
     display: flex;
     gap: 10px;
+}
+
+.btn2 {
+    width: 170px;
+    height: 48px;
+    border-radius: 8px;
+    border-color: #4c2b0d;
+    background: #5e3915;
+    color: white;
+    font-family: Nunito, sans-serif;
+    font-size: larger;
+    box-shadow: 0 5px 10px black;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px black;
+}
+
+
+.btn2:hover {
+    background: rgba(0, 0, 0, 0.538);
+    border-color: rgba(0, 0, 0, 0.538);
 }

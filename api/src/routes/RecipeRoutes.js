@@ -15,15 +15,14 @@ router.get('/', async (req, res, next) => {
 
     if (name) {
         try {
-            let recipe = allRecipes.filter(el => el.name.toLowerCase().includes(name.toLowerCase()));
-
+            let recipe = await allRecipes.filter(el => el.name.toLowerCase().includes(name.toLowerCase()));
             recipe.length ? res.status(200).send(recipe) : res.status(404).send("Recipe not found!");
         } catch (error) {
             next(error);
         }
     }
     else {
-        res.send(allRecipes);
+        res.status(200).send(allRecipes);
     }
 });
 

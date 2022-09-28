@@ -7,7 +7,8 @@ const { Recipe, Diet } = require('../db.js');
 const getApiInfo = async () => {
 
     const apiInfo = await axios.get('https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5');
-    // `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`
+    //'https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5'
+    //`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`
 
     const dataInfo = await apiInfo.data.results.map((el) => {
 
@@ -81,7 +82,7 @@ const getRecipeForIdApi = async (id) => {
 
     return {
         name: recipe.title,
-        summary: recipe.summary,
+        summary: recipe.summary.replaceAll(/<[^>]*>?/g,""),
         image: recipe.image,
         healthScore: recipe.healthScore,
         steps: recipe.analyzedInstructions[0]?.steps.map((el) => {

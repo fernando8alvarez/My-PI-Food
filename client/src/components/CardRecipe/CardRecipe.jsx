@@ -1,6 +1,6 @@
 import React from "react";
 import s from './CardRecipe.module.css';
-import { Link } from 'react-router-dom';
+import imagen from "../image/PlatoDefault.jpg"
 
 export default function CardRecipe({ name, image, diets, id, healthScore }) {
 
@@ -14,7 +14,7 @@ export default function CardRecipe({ name, image, diets, id, healthScore }) {
     return (
         <div className={s.card}>
             <div className={s.card_landing}>
-                <img src={image} className={s.img} alt="img not found" width="300px" />
+                <img src={image ? image : imagen} className={s.img} alt="" width="300px" height="220px" />
                 <div className={s.name}>{name}</div>
             </div>
             <div className={s.level}>

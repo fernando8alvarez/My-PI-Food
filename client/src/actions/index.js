@@ -8,13 +8,16 @@ export const ORDER_RECIPES_HEALTH_SCORE = "ORDER_RECIPES_HEALTH_SCORE";
 export const GET_RECIPES_NAME = "GET_RECIPES_NAME";
 export const GET_DIETS = "GET_DIETS";
 export const POST_RECIPES = "POST_RECIPES";
+export const GET_DETAILS = "GET_DETAILS";
+export const LOADING = "LOADING";
 
 
 //Action N°1: traer todos los recipes de la api
 export function getAllRecipes() {
     return async function (dispatch) {
+        dispatch({ type: LOADING, payload: true })
         const json = await axios.get("http://localhost:3001/recipes");
-        return dispatch({ type: GET_ALL_RECIPES, payload: json.data });
+        return dispatch({ type: GET_ALL_RECIPES, payload: { data: json.data, loading: false } });
     }
 }
 
@@ -58,18 +61,18 @@ export function orderRecipesHealthScore(payload) {
     }
 }
 
-//Action N°7:Obtener recetas por nombre
+//Action N°7: Obtener recetas por nombre
 export function getRecipesByName(name) {
 
     return (dispatch) => {
-        try {
-            return axios.get(`http://localhost:3001/recipes?name=${name}`)
-                .then((recipesPerName) => {
-                    return dispatch({ type: GET_RECIPES_NAME, payload: recipesPerName.data })
-                })
-        } catch (error) {
-            console.log(error);
-        }
+        dispatch({ type: LOADING, payload: true })
+        return axios.get(`http://localhost:3001/recipes?name=${name}`)
+            .then((recipesPerName) => {
+                return dispatch(
+                    { type: GET_RECIPES_NAME, payload: { data: recipesPerName.data, loading: false } }
+                )
+            })
+            .catch((error) => error && alert("Recipes not Found!!!"))
     }
 }
 
@@ -81,11 +84,24 @@ export function getDiets() {
     }
 }
 
-//Action N°9:
-export function postRecipes(payload){
-    return async function (dispatch) {
+//Action N°9: Agregar recetas a la base de datos (POST)
+export function postRecipes(payload) {
+    return async function () {
         const json = await axios.post("http://localhost:3001/recipes", payload);
         console.log(json);
         return json;
+    }
+}
+
+//Action N°10: Obtener detalles de un receta
+export function getDeteils(id) {
+    return async (dispatch) => {
+        try {
+            const json = await axios.get(`http://localhost:3001/recipes/${id}`);
+            return dispatch({ type: GET_DETAILS, payload: json.data });
+        } catch (error) {
+            console.log(error);
+            error && dispatch({ type: GET_DETAILS, payload: id })
+        }
     }
 }
