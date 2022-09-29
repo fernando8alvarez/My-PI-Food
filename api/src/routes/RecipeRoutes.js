@@ -61,7 +61,8 @@ router.post("/", async (req, res, next) => {
         res.status(200).send(createRecipe);
 
     } catch (error) {
-        next(error);
+       res.status(404).send("Error a la crear la receta");
+        //next(error);
     }
 
 });

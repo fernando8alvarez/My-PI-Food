@@ -72,7 +72,10 @@ export function getRecipesByName(name) {
                     { type: GET_RECIPES_NAME, payload: { data: recipesPerName.data, loading: false } }
                 )
             })
-            .catch((error) => error && alert("Recipes not Found!!!"))
+            .catch((error) => {if(error){
+                alert("Recipes not Found!!!")
+                dispatch({ type: LOADING, payload: false })
+            }})
     }
 }
 
