@@ -7,9 +7,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    height: 45em;
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
+    position: absolute;
 }
 
 .image {

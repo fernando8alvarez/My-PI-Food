@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Swal from 'sweetalert2';
 export const GET_ALL_RECIPES = "GET_ALL_RECIPES";
 export const FILTER_BY_TYPES_DIET = "FILTER_BY_TYPES_DIET";
 export const FILTER_RECIPES_ADDED = "FILTER_RECIPES_ADDED";
@@ -72,10 +73,19 @@ export function getRecipesByName(name) {
                     { type: GET_RECIPES_NAME, payload: { data: recipesPerName.data, loading: false } }
                 )
             })
-            .catch((error) => {if(error){
-                alert("Recipes not Found!!!")
-                dispatch({ type: LOADING, payload: false })
-            }})
+            .catch((error) => {
+                if (error) {
+                    Swal.fire({
+                        title: "Recipe not Found!!!",
+                        text: `There are no recipes with the name "${name}"`,
+                        icon: 'error',
+                        confirmButtonColor: "#5e3915",
+                        allowOutsideClick: false,
+                        allowEscapeKey: false
+                    })
+                    dispatch({ type: LOADING, payload: false })
+                }
+            })
     }
 }
 
@@ -89,10 +99,24 @@ export function getDiets() {
 
 //Action N°9: Agregar recetas a la base de datos (POST)
 export function postRecipes(payload) {
-    return async function () {
-        const json = await axios.post("http://localhost:3001/recipes", payload);
-        console.log(json);
-        return json;
+
+    try {
+        return async function () {
+            const json = await axios.post("http://localhost:3001/recipes", payload);
+            console.log(json);
+            return json;
+        }
+    } catch (error) {
+        if (error) {
+            Swal.fire({
+                title: "Sorry!",
+                text: `There was an error saving your recipe`,
+                icon: 'error',
+                confirmButtonColor: "#5e3915",
+                allowOutsideClick: false,
+                allowEscapeKey: false
+            })
+        }
     }
 }
 

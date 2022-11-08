@@ -5,20 +5,16 @@ import { getDeteils } from "../../actions";
 import s from "./Detail.module.css";
 import imagen from "../image/PlatoDefault.jpg"
 
-
 export default function Detail(props) {
     const dispatch = useDispatch();
     const myRecipe = useSelector(state => state.detail)[0];
 
     useEffect(() => {
-        dispatch(getDeteils(props.match.params.id))
-        return () => dispatch(getDeteils({}))
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        dispatch(getDeteils(props.match.params.id));
+        return () => dispatch(getDeteils({}));
     }, [dispatch])
 
     const score = [1, 2, 3, 4, 5];
-    console.log(myRecipe);
-
 
     return (
         <div className={s.fondo}>
@@ -31,7 +27,7 @@ export default function Detail(props) {
                 <div className={s.container2}>
                     <div className={s.container3}>
                         <div>
-                            <img src={myRecipe.image?myRecipe.image:imagen} alt="" width="400px" height="300px" className={s.imge} />
+                            <img src={myRecipe.image ? myRecipe.image : imagen} alt="" width="400px" height="300px" className={s.imge} />
                         </div>
                         <div>
                             <div className={s.container5}>

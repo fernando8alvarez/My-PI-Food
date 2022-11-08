@@ -33,7 +33,7 @@ function rootReducer(state = initialState, actions) {
                 loading: actions.payload.loading
             }
         case FILTER_BY_TYPES_DIET:
-            const filterPerDiet = actions.payload === "All" ? allRecipes : allRecipes.filter((el) => el.diets.includes(actions.payload) && el)
+            const filterPerDiet = actions.payload === "All" ? allRecipes : state.recipes.filter((el) => el.diets.includes(actions.payload) && el)
             return {
                 ...state,
                 recipes: filterPerDiet
@@ -45,7 +45,7 @@ function rootReducer(state = initialState, actions) {
                 recipes: actions.payload === "All" ? allRecipes : filterAddedRecipes
             }
         case FILTER_RECIPES_HEALTH_SCORE:
-            const filterRecipesHealthScore = allRecipes.filter(el => Math.ceil(el.healthScore / 20) === Number(actions.payload))
+            const filterRecipesHealthScore = state.recipes.filter(el => Math.ceil(el.healthScore / 20) === Number(actions.payload))
             return {
                 ...state,
                 recipes: filterRecipesHealthScore

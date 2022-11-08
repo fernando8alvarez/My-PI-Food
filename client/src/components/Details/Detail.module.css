@@ -2,12 +2,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: absolute;
     padding: 0%;
     background-image: url('../image/Fondo3.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    height: 120em;
+    max-height: auto;
+    min-height: 100%;
+    width: 100%;
+    
 }
 
 .container {
@@ -65,7 +69,6 @@
 
 .imge {
     box-shadow: 0 5px 10px black;
-
 }
 
 
@@ -116,6 +119,7 @@ p {
     color: transparent;
     background-color: #4d9f3d75;
     margin-right: 10px;
+    border-radius: 100%;
 }
 
 .empty {
@@ -125,6 +129,7 @@ p {
     height: 25px;
     color: transparent;
     margin-right: 10px;
+    border-radius: 100%;
 }
 
 .container4 {
@@ -195,5 +200,6 @@ p {
     background-color: rgba(255, 255, 255, 0.892);
     box-shadow: 0 5px 10px black;
     border-radius: 15px;
+    margin-bottom: 36px;
 }
 

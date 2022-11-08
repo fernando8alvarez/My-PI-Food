@@ -1,5 +1,3 @@
-
-
 .container {
     height: 200px;
     display: flex;
@@ -13,7 +11,6 @@ form {
     padding: 50px;
     width: 100%;
     max-width: 550px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,6 +21,7 @@ form {
     font-weight: bold;
     border-radius: 15px;
     box-shadow: 0 5px 10px black;
+    margin-bottom: 115px;
 }
 
 form input {
@@ -69,7 +67,8 @@ form input {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    height: 120em;
+    max-height: auto;
+    min-height: 100%;
 }
 
 .btncrt {
@@ -132,32 +131,44 @@ form input {
     border-color: rgba(0, 0, 0, 0.538);
 }
 
-.chk{
+.chk {
     display: flex;
     flex-direction: column;
 }
 
-.list{
+.list {
     column-count: 2;
     list-style: none;
     width: 500px;
 }
 
-.item{
- display: inline-flex;
- width: 240px;
- gap: 0px;
+.item {
+    display: inline-flex;
+    width: 240px;
+    gap: 0px;
 }
-.box{
+
+.box {
     height: 18px;
     padding: 0;
     width: 100px;
 }
 
-.t{
-   width: 500px;
-   display: flex;
+.t {
+    width: 500px;
+    display: flex;
 }
-.description{
+
+.description {
     margin-bottom: 10px;
+}
+
+.imgForm {
+    border: 4px solid black;
+    box-shadow: 0 0px 10px black;
+    border-radius: 10%;
+}
+
+.error{
+    color: rgb(246, 30, 30);
 }

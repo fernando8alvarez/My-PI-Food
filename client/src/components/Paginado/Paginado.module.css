@@ -36,3 +36,54 @@
     height: 50px;
     margin-right: 10px;
 }
+
+.containerP {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnNext {
+    border-bottom-left-radius: 100%;
+    border-top-left-radius: 100%;
+    border-bottom-right-radius: 20%;
+    border-top-right-radius: 20%;
+    background: #e3b957;
+    margin-right: 15px;
+    box-shadow: 0 5px 10px black;
+    color: white;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.btnNext:hover {
+    opacity: 0.9;
+    background-color: #000000;
+    border: none;
+    margin-right: 15px;
+}
+
+.btnPrev{
+    border-bottom-left-radius: 20%;
+    border-top-left-radius: 20%;
+    border-bottom-right-radius: 100%;
+    border-top-right-radius: 100%;
+    background: #e3b957;
+    margin-right: 15px;
+    box-shadow: 0 5px 10px black;
+    color: white;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.btnPrev:hover {
+    opacity: 0.9;
+    background-color: #000000;
+    border: none;
+}

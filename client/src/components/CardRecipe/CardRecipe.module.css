@@ -37,6 +37,7 @@
     justify-content: center;
     background: linear-gradient(transparent 80% black);
     opacity: 1;
+    transform: translateY(-15px);
 }
 
 .list {
@@ -69,8 +70,9 @@
 .level {
     display: flex;
     margin: 0;
-    gap: 10px;
+    gap: 7px;
     padding: 12px;
+    align-items: center;
 }
 
 .tittle {
@@ -82,15 +84,17 @@
 
 .color {
     border: #1e512870 2px solid;
-    width: 20px;
-    height: 20px;
+    border-radius: 100%;
+    width: 18px;
+    height: 18px;
     color: transparent;
     background-color: #4d9f3d75;
 }
 
 .empty {
     border: #1e512870 2px solid;
-    width: 20px;
-    height: 20px;
+    border-radius: 100%;
+    width: 18px;
+    height: 18px;
     color: transparent;
 }

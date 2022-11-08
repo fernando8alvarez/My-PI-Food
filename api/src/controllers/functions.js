@@ -2,6 +2,7 @@ const axios = require('axios');
 require('dotenv').config();
 const { API_KEY } = process.env;
 const { Recipe, Diet } = require('../db.js');
+const recipesJson = require('./100RecipesJson')
 
 //FUNCION N°1: Traer toda la informacion de la API
 const getApiInfo = async () => {
@@ -54,44 +55,27 @@ const getAllInfo = async () => {
     return totalInfo;//Arreglo de objeto tanto de la api como de la BD
 }
 
-//FUNCION N°4:Filtrar una receta por id en la API con promesas
-// const getRecipeForIdApi = (id) => {
-//     const recipeId = axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`)
-//         .then(res => {
-//             return {
-//                 name: res.data.title,
-//                 summary: res.data.summary,
-//                 image: res.data.image,
-//                 healthScore: res.data.healthScore,
-//                 steps: res.data.analyzedInstructions[0]?.steps.map((el) => {
-//                     return {
-//                         number: el.number,
-//                         step: el.step,
-//                     };
-//                 }),
-//                 diets: res.data.diets.map(e => e)
-//             }
-//         })
-//         .catch(error => error);
-// }
-
 //FUNCION N°4: Filtrar una receta por id en la API con async/await
-const getRecipeForIdApi = async (id) => {
-    const recipeId = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`)
-    const recipe = await recipeId.data;
+const getRecipeForIdApi = (id) => {
+    // const recipeId = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`)
+    // const recipe = await recipeId.data;
+
+    console.log(typeof(id));
+
+    const recipe = recipesJson.find((e) => e.id === Number(id));
 
     return {
-        name: recipe.title,
-        summary: recipe.summary.replaceAll(/<[^>]*>?/g,""),
-        image: recipe.image,
-        healthScore: recipe.healthScore,
-        steps: recipe.analyzedInstructions[0]?.steps.map((el) => {
+        name: recipe && recipe.title,
+        summary: recipe && recipe.summary.replaceAll(/<[^>]*>?/g, ""),
+        image: recipe && recipe.image,
+        healthScore: recipe && recipe.healthScore,
+        steps: recipe.steps[0] && recipe.steps.map((el) => {
             return {
                 number: el.number,
                 step: el.step,
             };
         }),
-        diets: recipe.diets.map(e => e)
+        diets: recipe && recipe.diets.map(e => e)
     }
 }
 
@@ -131,8 +115,8 @@ const getRecipeForIdDb = async (id) => {
 
 //FUNCION N°6: Filtrar una receta Dependiendo de la id recibo (si va a ser de la api o de la BD)
 const getAllInfoForId = async (id) => {
-    
-    return id.length > 15 ? await getRecipeForIdDb(id) : await getRecipeForIdApi(id);
+
+    return id.length > 15 ? await getRecipeForIdDb(id) : getRecipeForIdApi(id);
 
 }
 

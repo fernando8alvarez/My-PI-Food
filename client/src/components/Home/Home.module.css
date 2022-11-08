@@ -11,7 +11,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    height: 120em;
+    max-height: auto;
+    min-height: 100%;
+    width: 100%;
 }
 
 .tittle {
@@ -32,6 +34,7 @@
     margin: 10px;
     height: 800px;
     opacity: 1;
+    height: auto;
 }
 
 .link {
@@ -43,7 +46,7 @@
 .link:hover {
     opacity: 0.9;
     background-color: rgba(0, 0, 0, 0.547);
-    max-height: 80px;
+    max-height: 100%;
 }
 
 .hola {
@@ -51,8 +54,10 @@
 }
 
 .paginado {
-    margin-bottom: 20px;
+    display: flex;
     margin-top: 20px;
+    justify-content: center;
+  
 }
 
 .menu {
@@ -104,4 +109,11 @@ select {
 .btn:hover {
     background: rgba(0, 0, 0, 0.538);
     border-color: rgba(0, 0, 0, 0.538);
+}
+
+.CardPaginate{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
 }

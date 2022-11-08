@@ -4,7 +4,7 @@ import { getRecipesByName } from "../../actions";
 import s from './SearchBar.module.css';
 import { Link } from 'react-router-dom';
 
-export default function SearchBar() {
+export default function SearchBar({ paginate, numberPaginate }) {
     const dispatch = useDispatch();
     const [name, setName] = useState("");
 
@@ -17,6 +17,8 @@ export default function SearchBar() {
     function handleSubmit() {
         dispatch(getRecipesByName(name));
         setName("");
+        numberPaginate(1);
+        paginate(1);
     }
 
     return (

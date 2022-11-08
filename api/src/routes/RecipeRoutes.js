@@ -30,7 +30,6 @@ router.get('/', async (req, res, next) => {
 router.get('/:idRecipe', async (req, res, next) => {
 
     const { idRecipe } = req.params;
-
     try {
         const recipeDetails = await getAllInfoForId(idRecipe);
         res.status(200).send(recipeDetails);

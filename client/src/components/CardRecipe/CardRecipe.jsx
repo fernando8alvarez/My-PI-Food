@@ -12,7 +12,7 @@ export default function CardRecipe({ name, image, diets, id, healthScore }) {
     const score = [1, 2, 3, 4, 5];
 
     return (
-        <div className={s.card}>
+        <div className={s.card} key={id} title="Click to see more details!">
             <div className={s.card_landing}>
                 <img src={image ? image : imagen} className={s.img} alt="" width="300px" height="220px" />
                 <div className={s.name}>{name}</div>
@@ -21,9 +21,9 @@ export default function CardRecipe({ name, image, diets, id, healthScore }) {
                 <div className={s.tittle}>Health Score: </div>
                 {score.map(el => {
                     if (el <= Math.ceil(healthScore / 20)) {
-                        return (<div className={s.color}>-</div>)
+                        return (<div className={s.color} key={el}>-</div>)
                     }
-                    return <div className={s.empty}>-</div>
+                    return <div className={s.empty} key={el}>-</div>
                 })}
             </div>
             <div className={s.container}>

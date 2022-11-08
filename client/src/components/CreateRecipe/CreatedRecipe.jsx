@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { getDiets, postRecipes } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
-import s from './CreatedRecipe.module.css'
+import Swal from 'sweetalert2';
+import s from './CreatedRecipe.module.css';
+import logo from '../image/Logo.png'
+
+const typeDiest = ["dairy free", "gluten free", "lacto ovo vegetarian", "vegan", "paleolithic", "primal", "whole 30", "pescatarian", "ketogenic", "fodmap friendly"]
 
 export default function CreateRecipes() {
     const dispatch = useDispatch();
@@ -94,9 +98,16 @@ export default function CreateRecipes() {
             })
         }
         else {
-            alert("The field is empty!")
+            Swal.fire({
+                title: 'The field is empty!',
+                text: `You have not written any steps to add`,
+                icon: 'warning',
+                confirmButtonColor: "#5e3915",
+                allowOutsideClick: false,
+                allowEscapeKey: false
+            })
         }
-        console.log(pasos.number);
+
     }
 
     function handleDeleteStep(e) {
@@ -108,7 +119,14 @@ export default function CreateRecipes() {
             })
         }
         else {
-            alert("Empty field!!! there is nothing to delete.")
+            Swal.fire({
+                title: "Empty field!!! there is nothing to delete.",
+                text: `You must add a step first to be able to delete it.`,
+                icon: 'warning',
+                confirmButtonColor: "#5e3915",
+                allowOutsideClick: false,
+                allowEscapeKey: false
+            })
         }
     }
 
@@ -117,7 +135,14 @@ export default function CreateRecipes() {
 
         if (input.name && input.summary) {
             dispatch(postRecipes(input));
-            alert("Recipe created successfully!");
+            Swal.fire({
+                title: "Recipe created successfully!",
+                text: `Your information has been saved successfully`,
+                icon: 'success',
+                confirmButtonColor: "#5e3915",
+                allowOutsideClick: false,
+                allowEscapeKey: false
+            })
             setInput({
                 name: "",
                 summary: "",
@@ -128,7 +153,14 @@ export default function CreateRecipes() {
             });
             history.push('/home');
         } else {
-            alert(`The "name" and "summary fields are required!!!"`)
+            Swal.fire({
+                title: `The "name" and "summary fields are required!!!"`,
+                text: `Please complete these fields to be able to send the form`,
+                icon: 'warning',
+                confirmButtonColor: "#5e3915",
+                allowOutsideClick: false,
+                allowEscapeKey: false
+            })
         }
     }
 
@@ -145,67 +177,42 @@ export default function CreateRecipes() {
                 <div>
                     <label htmlFor="name">Name:  </label>
                     <input type="text" name="name" value={input.name} placeholder="  Brief recipe name" key="name" onChange={(e) => handleChange(e)} />
-                    {errors.name && (<p className="error">{errors.name}</p>)}
+                    {errors.name && (<p className={s.error}>{errors.name}</p>)}
                 </div>
                 <div>
                     <label htmlFor="summary">Summary:  </label>
                     <input type="text" name="summary" value={input.summary} key="summary" placeholder="  Brief summary of the recipe" onChange={(e) => handleChange(e)} />
-                    {errors.summary && (<p className="error">{errors.summary}</p>)}
+                    {errors.summary && (<p className={s.error}>{errors.summary}</p>)}
                 </div>
                 <div>
                     <label htmlFor="healthScore">HealthScore:  </label>
                     <input type="range" name="healthScore" min="0" max="5" step="1" key="healthScore" defaultValue={0} onChange={(e) => handleChange(e)} />
                     <label htmlFor="healthScore"> {input.healthScore / 20}</label>
                 </div>
+                <div >
+                    <div >
+                        <img src={input.image ? input.image : logo} alt={logo} className={s.imgForm} width="250px" height="250px"/>
+                    </div>
+                </div>
                 <div>
                     <label htmlFor="image">Image:  </label>
                     <input type="text" name="image" value={input.image} key="image" onChange={(e) => handleChange(e)} placeholder="  Image URL..." />
                 </div>
-                
+
                 <label htmlFor="">Type diets:</label>
                 <div  >
                     <label htmlFor="ckbox" className={s.chk} >
                         <ul className={s.list}>
-                            <li className={s.item}>
-                                <input type="checkbox" name="dairy free" value="dairy free" onChange={(e) => handleCheckBox(e)} className={s.box} />
-                                <label htmlFor="ckbox" className={s.t} >dairy free</label>
-                            </li>
-                            <li className={s.item}>
-                                <input type="checkbox" name="gluten free" value="gluten free" onChange={(e) => handleCheckBox(e)} className={s.box} />
-                                <label htmlFor="ckbox" className={s.t}>gluten free</label>
-                            </li>
-                            <li className={s.item}>
-                                <input type="checkbox" name="lacto ovo vegetarian" value="lacto ovo vegetarian" onChange={(e) => handleCheckBox(e)} className={s.box} />
-                                <label htmlFor="ckbox" className={s.t}>lacto ovo vegetarian</label>
-                            </li>
-                            <li className={s.item}>
-                                <input type="checkbox" name="vegan" value="vegan" onChange={(e) => handleCheckBox(e)} className={s.box} />
-                                <label htmlFor="ckbox" className={s.t}>vegan</label>
-                            </li>
-                            <li className={s.item}>
-                                <input type="checkbox" name="paleolithic" value="paleolithic" onChange={(e) => handleCheckBox(e)} className={s.box} />
-                                <label htmlFor="ckbox" className={s.t}>paleolithic</label>
-                            </li>
-                            <li className={s.item}>
-                                <input type="checkbox" name="primal" value="primal" onChange={(e) => handleCheckBox(e)} className={s.box} />
-                                <label htmlFor="ckbox" className={s.t}>primal</label>
-                            </li>
-                            <li className={s.item}>
-                                <input type="checkbox" name="whole 30" value="whole 30" onChange={(e) => handleCheckBox(e)} className={s.box} />
-                                <label htmlFor="ckbox" className={s.t}>whole 30</label>
-                            </li>
-                            <li className={s.item}>
-                                <input type="checkbox" name="pescatarian" value="pescatarian" onChange={(e) => handleCheckBox(e)} className={s.box} />
-                                <label htmlFor="ckbox" className={s.t}>pescatarian</label>
-                            </li>
-                            <li className={s.item}>
-                                <input type="checkbox" name="ketogenic" value="ketogenic" onChange={(e) => handleCheckBox(e)} className={s.box} />
-                                <label htmlFor="ckbox" className={s.t}>ketogenic</label>
-                            </li>
-                            <li className={s.item}>
-                                <input type="checkbox" name="fodmap friendly" value="fodmap friendly" onChange={(e) => handleCheckBox(e)} className={s.box} />
-                                <label htmlFor="ckbox" className={s.t}>fodmap friendly</label>
-                            </li>
+
+                            {typeDiest.map((el) => {
+                                return (
+                                    <li className={s.item}>
+                                        <input type="checkbox" name={el} value={el} onChange={(e) => handleCheckBox(e)} className={s.box} />
+                                        <label htmlFor="ckbox" className={s.t} >{el}</label>
+                                    </li>
+                                )
+                            })}
+
                         </ul>
                     </label>
                 </div>
