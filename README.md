@@ -1,18 +1,10 @@
-![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
-
-# Individual Project - Henry Food
-
-<p align="right">
-  <img height="200" src="./cooking.png" />
+<p align="center">
+  <img height="200" src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/client/src/components/image/Logo.png" />
 </p>
 
-## Objetivos del Proyecto
+## De que trata la app
 
-- Construir una App utlizando React, Redux, Node y Sequelize.
-- Afirmar y conectar los conceptos aprendidos en la carrera.
-- Aprender mejores prácticas.
-- Aprender y practicar el workflow de GIT.
-- Usar y practicar testing.
+Se trata de una pequeña aplicación en la que las personas pueden buscar alguna receta saludable de comida la cual quiera cocinar o preparar, en ella podrar filtrar la busqueda ya sea por nombre, tipo de dieta, nivel de salud, asi como también se podra ordenar las recetas alfabeticamente o por nivel de salud para una mejor busqueda, por otro lado al darle click alguna receta, en ella podra ver más detalles de la misma, asi como un resumen, los tipos de dietas asociados, y lo pasos a seguir para su realización. Por último podrá registra una receta a traves de un formulario para postearlo en la página.
 
 ## Horarios y Fechas
 
