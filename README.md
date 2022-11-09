@@ -6,6 +6,8 @@
 
 Se trata de una pequeña aplicación en la que las personas pueden buscar alguna receta saludable de comida la cual quiera cocinar o preparar, en ella podrar filtrar la busqueda ya sea por nombre, tipo de dieta, nivel de salud, asi como también se podra ordenar las recetas alfabeticamente o por nivel de salud para una mejor busqueda, por otro lado al darle click alguna receta, en ella podra ver más detalles de la misma, asi como un resumen, los tipos de dietas asociados, y lo pasos a seguir para su realización. Por último podrá registra una receta a traves de un formulario para postearlo en la página.
 
+- Link de la pagina web de la Api
+
 ## Tecnologías usadas
 
 - `ReactJS` 
@@ -16,6 +18,7 @@ Se trata de una pequeña aplicación en la que las personas pueden buscar alguna
 - `Sequelize` 
 - `PostgreSQL` 
 - `Api Food de spoonacular` 
+- `Link de la api:` [spoonacular](https://spoonacular.com/food-api)
 
 ## Vista previa de la app
 
@@ -43,23 +46,25 @@ Se trata de una pequeña aplicación en la que las personas pueden buscar alguna
 
 <img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/formulario.png" />
 
+## Ejecución local de la aplicación
 
-
-```env
-DB_USER=usuariodepostgres
-DB_PASSWORD=passwordDePostgres
-DB_HOST=localhost
+### Front-end
 ```
-
-Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
-
-Adicionalmente será necesario que creen desde psql una base de datos llamada `food`
-
-El contenido de `client` fue creado usando: Create React App.
-
-## Enunciado
-
-La idea general es crear una aplicación en la cual se puedan ver distintas recetas de comida junto con información relevante de las mismas utilizando la api externa [spoonacular](https://spoonacular.com/food-api) y a partir de ella poder, entre otras cosas:
+- npm install
+- npm start
+```
+### Back-end
+```
+- npm install
+- npm start
+```
+## Variables de entorno
+```
+- DB_USER="Su usuario de postgres"
+- DB_PASSWORD="Contraseña de postgres"
+- DB_HOST=localhost
+- API_KEY="Api key de spoonacular"
+```
 
 
 
