@@ -11,21 +11,15 @@ Se trata de una pequeña aplicación en la que las personas pueden buscar alguna
 - `Link deploy:` [Today´s Recipe](https://todays-recipe.vercel.app/)
 - `Link api:` [spoonacular](https://spoonacular.com/food-api)
 
-
 ## Tecnologías usadas
 
-- `ReactJS` 
-- `Redux`
-- `CSS3-Modules` 
-- `NodeJS`
-- `Express`
-- `Sequelize` 
-- `PostgreSQL` 
-- `Api Food de spoonacular` 
+<p align="center">
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/tecnology-PI.png" height="250"/>
+</p>
 
 ## Vista previa de la app
 
-- **Landing page:** carta de presentación y logo de la aplicación.
+- **Landing page:** Carta de presentación y logo de la aplicación.
 
 <img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/landingpage-food.png" />
 
