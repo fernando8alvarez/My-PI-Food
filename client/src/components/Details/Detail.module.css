@@ -11,7 +11,6 @@
     max-height: auto;
     min-height: 100%;
     width: 100%;
-    
 }
 
 .container {
@@ -24,7 +23,7 @@
 
 .tittle {
     color: #e3b957;
-    font-family: Romany, sans-serif;
+    font-family: 'Parisienne', cursive, sans-serif;
     font-size: 80px;
     text-shadow: 5px 5px black;
     margin: 0;
@@ -202,4 +201,3 @@ p {
     border-radius: 15px;
     margin-bottom: 36px;
 }
-
