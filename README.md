@@ -6,7 +6,9 @@
 
 Se trata de una pequeña aplicación en la que las personas pueden buscar alguna receta saludable de comida la cual quiera cocinar o preparar, en ella podrar filtrar la busqueda ya sea por nombre, tipo de dieta, nivel de salud, asi como también se podra ordenar las recetas alfabeticamente o por nivel de salud para una mejor busqueda, por otro lado al darle click alguna receta, en ella podra ver más detalles de la misma, asi como un resumen, los tipos de dietas asociados, y lo pasos a seguir para su realización. Por último podrá registra una receta a traves de un formulario para postearlo en la página.
 
-- Link de la pagina web de la Api
+### Deploy
+
+- `Link:` [Today´s Recipe](https://todays-recipe.vercel.app/)
 
 ## Tecnologías usadas
 
