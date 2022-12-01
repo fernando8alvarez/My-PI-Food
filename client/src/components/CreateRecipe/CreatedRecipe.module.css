@@ -172,3 +172,30 @@ form input {
 .error {
     color: rgb(246, 30, 30);
 }
+
+.inputSteps {
+    border: black 2px solid;
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
+    padding: 8px;
+}
+
+.containerStep {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.inputSumm {
+    border: black 2px solid;
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
+    padding: 8px;
+}
+
+.containerSumm {
+    width: auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}

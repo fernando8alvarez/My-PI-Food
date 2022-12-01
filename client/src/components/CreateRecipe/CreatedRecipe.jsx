@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { getDiets, postRecipes } from "../../actions";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Swal from 'sweetalert2';
 import s from './CreatedRecipe.module.css';
 import logo from '../image/Logo.png'
@@ -179,11 +179,11 @@ export default function CreateRecipes() {
                     <input type="text" name="name" value={input.name} placeholder="  Brief recipe name" key="name" onChange={(e) => handleChange(e)} />
                     {errors.name && (<p className={s.error}>{errors.name}</p>)}
                 </div>
-                <div>
+                <div className={s.containerSumm}>
                     <label htmlFor="summary">Summary:  </label>
-                    <input type="text" name="summary" value={input.summary} key="summary" placeholder="  Brief summary of the recipe" onChange={(e) => handleChange(e)} />
-                    {errors.summary && (<p className={s.error}>{errors.summary}</p>)}
+                    <textarea type="text" name="summary" rows="5" cols="50" className={s.inputSumm} value={input.summary} key="summary" placeholder="Brief summary of the recipe" onChange={(e) => handleChange(e)} />
                 </div>
+                {errors.summary && (<p className={s.error}>{errors.summary}</p>)}
                 <div>
                     <label htmlFor="healthScore">HealthScore:  </label>
                     <input type="range" name="healthScore" min="0" max="5" step="1" key="healthScore" defaultValue={0} onChange={(e) => handleChange(e)} />
@@ -191,7 +191,7 @@ export default function CreateRecipes() {
                 </div>
                 <div >
                     <div >
-                        <img src={input.image ? input.image : logo} alt={logo} className={s.imgForm} width="250px" height="250px"/>
+                        <img src={input.image ? input.image : logo} alt={logo} className={s.imgForm} width="250px" height="250px" />
                     </div>
                 </div>
                 <div>
@@ -219,9 +219,11 @@ export default function CreateRecipes() {
 
                 <label htmlFor="steps">Describe the steps:  </label>
                 <div className={s.stp}>
-                    <input type="text" value={pasos.step} name="steps" placeholder="  Describe the steps to follow in its preparation" onChange={(e) => handleSteps(e)} />
-                    <button onClick={(e) => handleAddStep(e)} className={s.btna}>Add Step</button>
-                    <button onClick={(e) => handleDeleteStep(e)} className={s.btnd} >Delete Step</button>
+                    <div className={s.containerStep}>
+                        <textarea type="text" rows="4" cols="35" className={s.inputSteps} value={pasos.step} name="steps" placeholder="Describe the steps to follow in it´s preparation" onChange={(e) => handleSteps(e)} />
+                        <button onClick={(e) => handleAddStep(e)} className={s.btna}>Add Step</button>
+                        <button onClick={(e) => handleDeleteStep(e)} className={s.btnd} >Delete Step</button>
+                    </div>
                     {input.steps.length >= 1 && input.steps.map((el) => (
                         <div className={s.description}>
                             <div>Step: {el.number}</div>
