@@ -6,23 +6,20 @@
 
 Se trata de una pequeña aplicación en la que las personas pueden buscar alguna receta saludable de comida la cual quiera cocinar o preparar, en ella podrar filtrar la busqueda ya sea por nombre, tipo de dieta, nivel de salud, asi como también se podra ordenar las recetas alfabeticamente o por nivel de salud para una mejor busqueda, por otro lado al darle click alguna receta, en ella podra ver más detalles de la misma, asi como un resumen, los tipos de dietas asociados, y lo pasos a seguir para su realización. Por último podrá registra una receta a traves de un formulario para postearlo en la página.
 
-- Link de la pagina web de la Api
+### Deploy y API
+
+- `Link deploy:` [Today´s Recipe](https://todays-recipe.vercel.app/)
+- `Link api:` [spoonacular](https://spoonacular.com/food-api)
 
 ## Tecnologías usadas
 
-- `ReactJS` 
-- `Redux`
-- `CSS3-Modules` 
-- `NodeJS`
-- `Express`
-- `Sequelize` 
-- `PostgreSQL` 
-- `Api Food de spoonacular` 
-- `Link de la api:` [spoonacular](https://spoonacular.com/food-api)
+<p align="center">
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/tecnology-PI.png" height="250"/>
+</p>
 
 ## Vista previa de la app
 
-- **Landing page:** carta de presentación y logo de la aplicación.
+- **Landing page:** Carta de presentación y logo de la aplicación.
 
 <img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/landingpage-food.png" />
 
