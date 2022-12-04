@@ -11,7 +11,7 @@ Se trata de una pequeña aplicación en la que las personas pueden buscar alguna
 - `Link deploy:` [Today´s Recipe](https://todays-recipe.vercel.app/)
 - `Link api:` [spoonacular](https://spoonacular.com/food-api)
 
-## Tecnologías usadas
+## Tecnologías y herramientas usadas
 
 <p align="center">
 <img class='margin-right' src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/vsCode.png" height="80px"/>
