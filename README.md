@@ -14,7 +14,38 @@ Se trata de una pequeña aplicación en la que las personas pueden buscar alguna
 ## Tecnologías usadas
 
 <p align="center">
-<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/tecnology-PI.png" height="250"/>
+<img class='margin-right' src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/vsCode.png" height="80px"/>
+<img width="10px"/>
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/git.png" height="80px"/>
+<img width="10px"/>
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/github.png" height="80px"/>
+<img width="10px"/>
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/html.png" height="80px"/>
+<img width="10px"/>
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/css.png" height="80px"/>
+<img width="10px"/>
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/javascript.png" height="80px"/>
+<img width="10px"/>
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/react.png" height="80px"/>
+<img width="10px"/>
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/redux.png" height="80px"/>
+</p>
+<p align="center">
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/nodeJS.png" height="80px"/>
+<img width="10px"/>
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/express.png" height="80px"/>
+<img width="10px"/>
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/SQL.png" height="80px"/>
+<img width="10px"/>
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/postgresSQL.png" height="80px"/>
+<img width="10px"/>
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/sequelize.png" height="80px"/>
+<img width="10px"/>
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/thunderClient.png" height="80px"/>
+<img width="10px"/>
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/sweetalert2.png" height="80px"/>
+<img width="10px"/>
+<img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/canva.png" height="80px"/>
 </p>
 
 ## Vista previa de la app
