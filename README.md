@@ -29,8 +29,7 @@ Se trata de una pequeña aplicación en la que las personas pueden buscar alguna
 <img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/react.png" height="80px"/>
 <img width="10px"/>
 <img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/redux.png" height="80px"/>
-</p>
-<p align="center">
+<img width="10px"/>
 <img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/nodeJS.png" height="80px"/>
 <img width="10px"/>
 <img src="https://github.com/fernando8alvarez/My-PI-Food/blob/main/Img/express.png" height="80px"/>
